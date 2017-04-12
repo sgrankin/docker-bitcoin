@@ -12,4 +12,4 @@ EXPOSE 8333
 # json RPC
 EXPOSE 8332
 
-CMD /entrypoint.sh
+CMD ["/entrypoint.sh"]

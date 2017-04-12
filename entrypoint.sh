@@ -1,12 +1,11 @@
 #!/bin/sh
 set -euo pipefail
 chown -R bitcoin:bitcoin /var/lib/bitcoin
-exec /sbin/chpst -u bitcoin:bitcoin \
-  /usr/bin/bitcoind \
+exec /sbin/chpst -u bitcoin:bitcoin /usr/bin/bitcoind \
   -conf=/etc/bitcoin.conf \
   -datadir=/var/lib/bitcoin \
-  -rpcport=83332 \
-  -daemon=0 \
   -server \
+  -logips \
   -printtoconsole \
-  -logips
+  -rpcport=8332 \
+  -rpcallowip=0.0.0.0/0
